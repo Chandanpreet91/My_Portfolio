@@ -1,0 +1,27 @@
+<!-- include is a function used to include a view template from a different file -->
+<!-- it takes the argument of a path to the view file -->
+<%- include('./partials/header') %>
+  <main id='contact-me'>
+    <h1>Contact</h1>
+    <!-- default behaviour of submitting a form is to send a GET request to the current PATH -->
+    <!-- To overwrite this you can set the action attribute in the form tag -->
+    <form method='POST' url = '/thankyou'>
+        <div class='form-group'>
+            <label for='fullName'>Name</label> </br>
+            <input id='fullName' class='form-control' type='text' name='fullName'>
+        </div>
+        <div class='form-group'>
+            <label for='email'>Email</label> </br>
+            <input id='email' class='form-control' type='text' name='email'>
+        </div>
+        <div class='form-group'>
+            <label for='message'>Leave a message!</label> </br>
+            <textarea id='message' class='form-control' type='text' name='message'></textarea>
+        </div>
+      <!-- the default behaviour when you submit a form is to send a GET request to the current PATH -->
+      <!-- The form will attatch all the inputs to the URL query -->
+      <!-- the name attributes of all inputs act as the keys to the query the values which were entered into the inputs are the values for the key -->
+      <input type='submit' value='Send'/>
+    </form>
+  </main>
+<%- include('./partials/footer') %>
